@@ -1,0 +1,10 @@
+{
+    "sbi": {
+        "is_disabled": true,
+        "user_id": "Input your user id.",
+        "user_password": "Input your user password.",
+        "trading_password": "Input your trading password."
+    },
+    "display": false,
+    "is_headless": true
+}
