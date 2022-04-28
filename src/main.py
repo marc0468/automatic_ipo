@@ -16,7 +16,11 @@ def button_click():
 def ipo_order() -> bool:
     ret = False
     if config["sbi"]["is_disabled"]:
-        sbi_ipo = sbi.Ipo(headless=config["is_headless"])
+        try:
+            incognito = config["sbi"]["incognito"]
+        except Exception:
+            incognito = False
+        sbi_ipo = sbi.Ipo(headless=config["is_headless"], incognito=incognito)
         if sbi_ipo.login(
             user_id=config["sbi"]["user_id"],
             user_password=config["sbi"]["user_password"],

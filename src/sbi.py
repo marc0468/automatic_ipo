@@ -16,11 +16,12 @@ URL_IPO_LIST = "https://m.sbisec.co.jp/oeliw011?type=21"
 
 
 class Ipo:
-    def __init__(self, headless=True, timeout=10):
+    def __init__(self, headless=True, incognito=False, timeout=10):
         option = Options()
         if headless:
             option.add_argument("--headless")
-        option.add_argument("--incognito")
+        if incognito:
+            option.add_argument("--incognito")
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=option)
         self.timeout = timeout
 
